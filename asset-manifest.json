@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/heyaband_landing_page/static/css/main.49d92e34.css",
+    "main.js": "/heyaband_landing_page/static/js/main.d4d4a0a3.js",
+    "index.html": "/heyaband_landing_page/index.html",
+    "main.49d92e34.css.map": "/heyaband_landing_page/static/css/main.49d92e34.css.map",
+    "main.d4d4a0a3.js.map": "/heyaband_landing_page/static/js/main.d4d4a0a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49d92e34.css",
+    "static/js/main.d4d4a0a3.js"
+  ]
+}
