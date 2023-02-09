@@ -63,6 +63,7 @@
 
 .nav-item:hover:after {
   width: 100%;
+  color: #40ff83;
   background: #40ff83;
 }
 

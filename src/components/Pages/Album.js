@@ -1,6 +1,20 @@
 import React from "react";
+import axios from "axios"
+import { useEffect, useState} from "react";
 
 export const Album = () => {
+
+  const [data,setData] = useState([]);
+   useEffect(()=>{
+    axios.get('http://localhost:8000/api/pic').then(res=>{
+       console.log(res.data)
+       setData(res.data.data)
+    })
+    .catch(err =>{
+      console.log('error...')
+    })
+   },[])
+
   return (
     <div className="m-5">
        <div className="m-auto text-center">
@@ -13,18 +27,56 @@ export const Album = () => {
         <div className="m-4 ">
            <div>  
                 <span className=""> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[1]} alt=""/>
                </span>
 
                <span className=""> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[3]} alt=""/>
                 
                </span>
 
                <span className=""> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[2]} alt=""/>
                 
                </span>
+            </div>
+            </div>
+       </div>
+
+
+       <div className="m-auto text-center">
+        <h1 className="m-5">Letest News</h1>
+
+        <div className="m-4 ">
+           <div>  
+                <span className=""> 
+                <img className="img-fluid img-thumbnail" src={data[1]} alt=""/>
+               </span>
+
+               <span className=""> 
+                <img className="img-fluid img-thumbnail" src={data[3]} alt=""/>
+                
+               </span>
+
+               <span className=""> 
+                <img className="img-fluid img-thumbnail" src={data[2]} alt=""/>
+                
+               </span>
+            </div>
+            </div>
+       </div>
+
+       <div className="m-auto text-center">
+        <h1>SIGNUP FOR THE LETEST NEWSLETTER</h1>
+        <div className="m-5 d-flex">
+        <p className="w-75 d-inline text-muted">Subscribe for free downloads and news updates</p>
+
+        </div>
+
+
+        <div className=" ">
+           <div>  
+                
             </div>
             </div>
        </div>

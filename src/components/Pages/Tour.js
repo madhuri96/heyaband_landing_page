@@ -1,7 +1,21 @@
 import React from "react";
 import "./tour.css"
+import axios from "axios"
+import { useEffect, useState} from "react";
 
 export const Tour = () => {
+
+   const [data,setData] = useState([]);
+   useEffect(()=>{
+    axios.get('http://localhost:8000/api/pic').then(res=>{
+       console.log(res.data)
+       setData(res.data.data)
+    })
+    .catch(err =>{
+      console.log('error...')
+    })
+   },[])
+
   return (
     <div>
        <div className="m-auto text-center">
@@ -14,21 +28,21 @@ export const Tour = () => {
         <div className="m-4 ">
            <div>  
                 <span className="tour"> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[0]} alt=""/>
                 <span className="second-txt h1">
                    USA TOUR
                </span>
                </span>
 
                <span className="tour"> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[1]} alt=""/>
                 <span className="second-txt h1">
                    UK TOUR
                </span>
                </span>
 
                <span className="tour"> 
-                <img className="img-fluid img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96txMgVaUpoqaRQmtb9jC500Av4CiLnjdul-WyD4juDnwy0yzsWW02jWnnnzxHt7UTak&usqp=CAU" alt=""/>
+                <img className="img-fluid img-thumbnail" src={data[2]} alt=""/>
                 <span className="second-txt h1">
                    INDIA TOUR
                </span>

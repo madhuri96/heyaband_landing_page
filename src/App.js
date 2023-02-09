@@ -12,15 +12,14 @@ function App() {
     <div className="App">
       
       <Router>
-        <NavBar />
-
+      <NavBar />
         <div className="pages">
           <Routes>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/Tour" component={Tour} />
-            <Route path="/Album" component={Album} />
-            <Route path="/contact" component={Contact} />
+            <Route exact path="/" element={ <Home /> } />
+            <Route path="/About" element={ <About />} />
+            <Route path="/Tour" element={ <Tour />} />
+            <Route path="/Album" element={ <Album />} />
+            <Route path="/Contact" element={ <Contact /> } />
           </Routes>
         </div>
       </Router>

@@ -11,7 +11,7 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-          <i className="fa-duotone fa-guitar-electric"></i>
+          <i class="fa-solid fa-guitar"></i>
             Heyaband
           </NavLink>
 
@@ -30,7 +30,7 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/about"
+                to="/About"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -63,7 +63,7 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/Contact"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
